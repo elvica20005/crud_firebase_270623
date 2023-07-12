@@ -1,3 +1,4 @@
+import 'package:crud_firebase_270623/login_page/register.dart';
 import 'package:crud_firebase_270623/pages/home_google_sign_in.dart';
 import 'package:crud_firebase_270623/pages/principal.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,8 @@ import 'package:crud_firebase_270623/pages/edit_name_page.dart';
 import 'package:crud_firebase_270623/pages/home_page.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
+
+import 'login_page/ingreso.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,6 +39,8 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const HomeGoogle(),
         '/add': (context) => const AddNamePage(),
         '/edit': (context) => const EditNamePage(),
+        '/register': (context) =>  Register(),
+        '/ingreso': (context) => const ingreso(),
       },
     );
   }

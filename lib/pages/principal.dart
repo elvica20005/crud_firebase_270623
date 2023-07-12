@@ -37,9 +37,14 @@ class _principalState extends State<principal> {
                   },
                   child: Column(
                     children: <Widget>[
-                      const Expanded(
-                        child: Image(
-                          image: AssetImage("assets/alumno.png"),
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/ingreso');
+                          },
+                          child: Image(
+                            image: AssetImage("assets/alumno.png"),
+                          ),
                         ),
                       ),
                       Container(
@@ -56,10 +61,8 @@ class _principalState extends State<principal> {
                 color: Colors.green,
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => princ_tutor()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => princ_tutor()));
                   },
                   child: Column(
                     children: <Widget>[
@@ -100,9 +103,14 @@ class _principalState extends State<principal> {
                 color: Colors.green,
                 child: Column(
                   children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/monitor.png"),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/ingreso');
+                        },
+                        child: Image(
+                          image: AssetImage("assets/monitor.png"),
+                        ),
                       ),
                     ),
                     Container(
@@ -157,7 +165,7 @@ class _principalState extends State<principal> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/home');
+                          Navigator.pushNamed(context, '/ingreso');
                         },
                         child: const Image(
                           image: AssetImage("assets/administrador.png"),
