@@ -1,5 +1,3 @@
-import 'package:crud_firebase_270623/pages/princ_alumno.dart';
-import 'package:crud_firebase_270623/pages/princ_tutor.dart';
 import 'package:flutter/material.dart';
 
 class principal extends StatefulWidget {
@@ -42,7 +40,7 @@ class _principalState extends State<principal> {
                           onTap: () {
                             Navigator.pushNamed(context, '/ingreso');
                           },
-                          child: Image(
+                          child: const Image(
                             image: AssetImage("assets/alumno.png"),
                           ),
                         ),
@@ -59,11 +57,6 @@ class _principalState extends State<principal> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 color: Colors.green,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => princ_tutor()));
-                  },
                   child: Column(
                     children: <Widget>[
                       const Expanded(
@@ -72,27 +65,31 @@ class _principalState extends State<principal> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: const Text('Tutor'),
                       ),
                     ],
                   ),
                 ),
-              ),
               Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 color: Colors.green,
                 child: Column(
                   children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/docente.jpg"),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/ingreso');
+                        },
+                        child: const Image(
+                          image: AssetImage("assets/docente.jpg"),
+                        ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text('Docente'),
+                      padding: const EdgeInsets.all(10),
+                      child: const Text('Docente'),
                     ),
                   ],
                 ),
@@ -108,14 +105,14 @@ class _principalState extends State<principal> {
                         onTap: () {
                           Navigator.pushNamed(context, '/ingreso');
                         },
-                        child: Image(
+                        child: const Image(
                           image: AssetImage("assets/monitor.png"),
                         ),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text('Monitor'),
+                      padding: const EdgeInsets.all(10),
+                      child: const Text('Monitor'),
                     ),
                   ],
                 ),
@@ -132,7 +129,7 @@ class _principalState extends State<principal> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: const Text('Encargado de orden'),
                     ),
                   ],
@@ -150,7 +147,7 @@ class _principalState extends State<principal> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: const Text('Psicologo'),
                     ),
                   ],
@@ -162,18 +159,13 @@ class _principalState extends State<principal> {
                 color: Colors.green,
                 child: Column(
                   children: <Widget>[
-                    Expanded(
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, '/ingreso');
-                        },
-                        child: const Image(
-                          image: AssetImage("assets/administrador.png"),
-                        ),
+                    const Expanded(
+                      child: Image(
+                        image: AssetImage("assets/administrador.png"),
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: const Text('Administrador'),
                     ),
                   ],

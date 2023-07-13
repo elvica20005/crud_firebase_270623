@@ -151,7 +151,7 @@ class _StudentState extends State<Student> {
                     ),
                     Container(
                       padding: EdgeInsets.all(10),
-                      child: const Text('Confiuración'),
+                      child: const Text('Configuración'),
                     ),
                   ],
                 ),
@@ -186,7 +186,5 @@ class _StudentState extends State<Student> {
     await FirebaseAuth.instance.signOut();
 
     Navigator.pushNamed(context, '/principal');
-
-
   }
 }

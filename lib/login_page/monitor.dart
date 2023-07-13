@@ -30,9 +30,9 @@ class _monitorState extends State<monitor> {
         .doc(id)
         .get()
         .then((value) {
-      this.loggedInUser = UserModel.fromMap(value.data());
+      loggedInUser = UserModel.fromMap(value.data());
     }).whenComplete(() {
-      CircularProgressIndicator();
+      const CircularProgressIndicator();
       setState(() {
         emaill = loggedInUser.email.toString();
         rooll = loggedInUser.wrool.toString();
@@ -48,7 +48,7 @@ class _monitorState extends State<monitor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "Monitor",
         ),
         centerTitle: true,
@@ -58,7 +58,7 @@ class _monitorState extends State<monitor> {
             onPressed: () {
               logout(context);
             },
-            icon: Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
           ),
         ],
       ),
@@ -168,9 +168,8 @@ class _monitorState extends State<monitor> {
   }
 
   Future<void> logout(BuildContext context) async {
-    CircularProgressIndicator();
+    const CircularProgressIndicator();
     await FirebaseAuth.instance.signOut();
-
     Navigator.pushNamed(context, '/principal');
   }
 }

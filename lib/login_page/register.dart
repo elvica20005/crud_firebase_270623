@@ -247,7 +247,13 @@ class _RegisterState extends State<Register> {
                           elevation: 5.0,
                           height: 40,
                           onPressed: () {
-                            Navigator.pushNamed(context, '/register');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                builder: (context) => LoginPage(),
+                                ),
+                            );
+
                             setState(() {
                               showProgress = true;
                             });

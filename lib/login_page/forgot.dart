@@ -15,7 +15,8 @@ class _ForgotpassState extends State<Forgotpass> {
   bool visible = false;
   final _auth = FirebaseAuth.instance;
   final _formkey = GlobalKey<FormState>();
-  final TextEditingController emailController = new TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,16 +39,16 @@ class _ForgotpassState extends State<Forgotpass> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             "Forgot\n"
-                                "Password",
+                            "Password",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
                               fontSize: 50,
                             ),
                           ),
-                          Text(
+                          const Text(
                             "Dont worry...",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -55,28 +56,30 @@ class _ForgotpassState extends State<Forgotpass> {
                               fontSize: 20,
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           TextFormField(
                             controller: emailController,
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: Colors.white,
+                              fillColor: Colors.blueGrey,
                               hintText: 'Email',
                               enabled: true,
                               contentPadding: const EdgeInsets.only(
                                   left: 14.0, bottom: 8.0, top: 8.0),
                               focusedBorder: OutlineInputBorder(
-                                borderSide: new BorderSide(color: Colors.white),
-                                borderRadius: new BorderRadius.circular(20),
+                                borderSide:
+                                    const BorderSide(color: Colors.white),
+                                borderRadius: BorderRadius.circular(20),
                               ),
                               enabledBorder: UnderlineInputBorder(
-                                borderSide: new BorderSide(color: Colors.white),
-                                borderRadius: new BorderRadius.circular(20),
+                                borderSide:
+                                    const BorderSide(color: Colors.white),
+                                borderRadius: BorderRadius.circular(20),
                               ),
                             ),
                             textInputAction: TextInputAction.done,
@@ -85,7 +88,7 @@ class _ForgotpassState extends State<Forgotpass> {
                                 return "Email cannot be empty";
                               }
                               if (!RegExp(
-                                  "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                                      "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
                                   .hasMatch(value)) {
                                 return ("Please enter a valid email");
                               } else {
@@ -97,7 +100,7 @@ class _ForgotpassState extends State<Forgotpass> {
                             },
                             keyboardType: TextInputType.emailAddress,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 30,
                           ),
                           Row(
@@ -105,7 +108,7 @@ class _ForgotpassState extends State<Forgotpass> {
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               MaterialButton(
-                                shape: RoundedRectangleBorder(
+                                shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(
                                         Radius.circular(20.0))),
                                 elevation: 5.0,
@@ -116,16 +119,16 @@ class _ForgotpassState extends State<Forgotpass> {
                                       MaterialPageRoute(
                                           builder: (context) => LoginPage()));
                                 },
-                                child: Text(
+                                color: Colors.blueGrey,
+                                child: const Text(
                                   "Login",
                                   style: TextStyle(
                                     fontSize: 20,
                                   ),
                                 ),
-                                color: Colors.white,
                               ),
                               MaterialButton(
-                                shape: RoundedRectangleBorder(
+                                shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.all(
                                         Radius.circular(20.0))),
                                 elevation: 5.0,
@@ -136,17 +139,17 @@ class _ForgotpassState extends State<Forgotpass> {
                                     visible = true;
                                   });
                                 },
-                                child: Text(
+                                color: Colors.blueGrey,
+                                child: const Text(
                                   "Ok",
                                   style: TextStyle(
                                     fontSize: 20,
                                   ),
                                 ),
-                                color: Colors.white,
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Visibility(
@@ -154,10 +157,9 @@ class _ForgotpassState extends State<Forgotpass> {
                               maintainAnimation: true,
                               maintainState: true,
                               visible: visible,
-                              child: Container(
-                                  child: CircularProgressIndicator(
-                                    color: Colors.white,
-                                  ))),
+                              child: const CircularProgressIndicator(
+                                color: Colors.white,
+                              )),
                         ],
                       ),
                     ),
@@ -165,35 +167,23 @@ class _ForgotpassState extends State<Forgotpass> {
                 ),
               ),
               Container(
-                color: Colors.white,
+                color: Colors.blueGrey,
                 width: MediaQuery.of(context).size.width,
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
-                      Text(
-                        "Made by",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
-                      ),
                       SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        "WEBFUN",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 30,
-                          color: Colors.yellowAccent[400],
+                        height: 150,
+                        child: Image.asset(
+                          "assets/Syse logo.jpeg",
                         ),
                       ),
                     ],
@@ -212,9 +202,9 @@ class _ForgotpassState extends State<Forgotpass> {
       await _auth
           .sendPasswordResetEmail(email: email)
           .then((uid) => {
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => LoginPage()))
-      })
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => LoginPage()))
+              })
           .catchError((e) {});
     }
   }

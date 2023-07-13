@@ -45,8 +45,8 @@ class _TeacherState extends State<Teacher> {
     return Scaffold(
       backgroundColor: Colors.greenAccent.shade400,
       appBar: AppBar(
-        title: Text(
-          "Administrador",
+        title: const Text(
+          "Docente",
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -62,7 +62,7 @@ class _TeacherState extends State<Teacher> {
       body: SafeArea(
         child: GestureDetector(
           child: GridView.count(
-            crossAxisCount: 3,
+            crossAxisCount: 2,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
             padding: const EdgeInsets.all(40),
@@ -113,44 +113,6 @@ class _TeacherState extends State<Teacher> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/control acceso.png"),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text('Control de Acceso',
-                          textAlign: TextAlign.center),
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: Colors.green,
-                child: Column(
-                  children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/reportes.jpeg"),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text('Reportes',
-                          textAlign: TextAlign.center),
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: Colors.green,
-                child: Column(
-                  children: <Widget>[
-                    const Expanded(
-                      child: Image(
                         image: AssetImage("assets/notificaciones.jpg"),
                       ),
                     ),
@@ -187,12 +149,8 @@ class _TeacherState extends State<Teacher> {
                 color: Colors.green,
                 child: Column(
                   children: <Widget>[
-                    Expanded(
-                      //child: InkWell(
-                      //onTap: () {
-                      //Navigator.pushNamed(context, '/home');
-                      //},
-                      child: const Image(
+                    const Expanded(
+                      child: Image(
                         image: AssetImage("assets/confiuracion.png"),
                       ),
                     ),
@@ -200,82 +158,6 @@ class _TeacherState extends State<Teacher> {
                     Container(
                       padding: EdgeInsets.all(10),
                       child: const Text('Configuración',
-                          textAlign: TextAlign.center),
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: Colors.green,
-                child: Column(
-                  children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/cita.jpg"),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: const Text('Cita',
-                          textAlign: TextAlign.center),
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: Colors.green,
-                child: Column(
-                  children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/consultas.png"),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: const Text('Consultas',
-                          textAlign: TextAlign.center),
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: Colors.green,
-                child: Column(
-                  children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/reportes.jpeg"),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: const Text('Registro de Alumnos',
-                          textAlign: TextAlign.center),
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30)),
-                color: Colors.green,
-                child: Column(
-                  children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/buscar.png"),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.all(10),
-                      child: const Text('Buscar Expediente',
                           textAlign: TextAlign.center),
                     ),
                   ],

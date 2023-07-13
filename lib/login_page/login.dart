@@ -17,6 +17,7 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController passwordController = TextEditingController();
 
   final _auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +75,7 @@ class _LoginPageState extends State<LoginPage> {
                               return "Email no puede estar vacío";
                             }
                             if (!RegExp(
-                                "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
+                                    "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+.[a-z]")
                                 .hasMatch(value)) {
                               return ("Ingrese Email valido");
                             } else {
@@ -140,6 +141,7 @@ class _LoginPageState extends State<LoginPage> {
                                 builder: (context) => Forgotpass(),
                               ),
                             );
+                            Future.delayed(const Duration(milliseconds: 100));
                           },
                           child: const Text(
                             "¿Olvidó su password? ....",
@@ -166,7 +168,7 @@ class _LoginPageState extends State<LoginPage> {
                         MaterialButton(
                           shape: const RoundedRectangleBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(20.0))),
+                                  BorderRadius.all(Radius.circular(20.0))),
                           elevation: 5.0,
                           height: 40,
                           onPressed: () {
@@ -254,12 +256,12 @@ class _LoginPageState extends State<LoginPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                      SizedBox(
-                      height: 150,
-                      child: Image.asset(
-                        "assets/Syse logo.jpeg",
-                      ),
-                    ),
+                        SizedBox(
+                          height: 150,
+                          child: Image.asset(
+                            "assets/Syse logo.jpeg",
+                          ),
+                        ),
 
                         /*Text(
                           "FUN",
@@ -285,7 +287,7 @@ class _LoginPageState extends State<LoginPage> {
     if (_formkey.currentState!.validate()) {
       try {
         UserCredential userCredential =
-        await FirebaseAuth.instance.signInWithEmailAndPassword(
+            await FirebaseAuth.instance.signInWithEmailAndPassword(
           email: email,
           password: password,
         );
