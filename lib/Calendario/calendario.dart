@@ -4,19 +4,33 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_datepicker/datepicker.dart';
 
 class Calendario extends StatefulWidget {
-  const Calendario({Key? key}) : super(key: key);
+  Function? createTodoDialog;
+  Calendario({Key? key, required this.createTodoDialog}) : super(key: key);
 
   @override
   State<Calendario> createState() => _CalendarioState();
 }
 
 class _CalendarioState extends State<Calendario> {
+  
+  _createTodoDialog() {
+    showDialog(context: context, builder: (context) => _SaveDialogo());
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Calendario Escolar'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              _createTodoDialog();
+            },
+            icon: const Icon(Icons.add),
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -108,6 +122,17 @@ class _PageEmpty extends StatelessWidget {
                   fontWeight: FontWeight.w100),
             )),
       ),
+    );
+  }
+}
+
+class _SaveDialogo extends StatelessWidget {
+  const _SaveDialogo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      content: Text("Hello Flutter"),
     );
   }
 }
