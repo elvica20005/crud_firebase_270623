@@ -9,6 +9,8 @@ import 'teacher.dart';
 import 'monitor.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -17,24 +19,24 @@ class _HomePageState extends State<HomePage> {
   _HomePageState();
   @override
   Widget build(BuildContext context) {
-    return contro();
+    return const Contro();
   }
 }
 
-class contro extends StatefulWidget {
-  contro();
+class Contro extends StatefulWidget {
+  const Contro({super.key});
 
   @override
-  _controState createState() => _controState();
+  _ControState createState() => _ControState();
 }
 
-class _controState extends State<contro> {
-  _controState();
+class _ControState extends State<Contro> {
+  _ControState();
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
-  var rooll;
-  var emaill;
-  var id;
+  var rooll="";
+  var emaill="";
+  var id="";
   @override
   void initState() {
     super.initState();
@@ -78,6 +80,5 @@ class _controState extends State<contro> {
   Widget build(BuildContext context) {
     const CircularProgressIndicator();
     return routing();
-    Future.delayed(const Duration(milliseconds: 100));
   }
 }

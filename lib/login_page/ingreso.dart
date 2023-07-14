@@ -27,7 +27,7 @@ class _ingresoState extends State<ingreso> {
       appBar: AppBar(
         title: Text('Bienvenido Sistema Syce'),
         centerTitle: true,
-        automaticallyImplyLeading: false,
+        //automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Column(
