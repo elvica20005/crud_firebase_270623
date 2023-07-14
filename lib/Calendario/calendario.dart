@@ -127,12 +127,24 @@ class _PageEmpty extends StatelessWidget {
 }
 
 class _SaveDialogo extends StatelessWidget {
-  const _SaveDialogo({Key? key}) : super(key: key);
+  _SaveDialogo({Key? key}) : super(key: key);
+
+  final _key = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      content: Text("Hello Flutter"),
+      content: Form(
+        key: _key,
+        child: Column(children: [
+        TextFormField(
+          decoration: const InputDecoration(
+            labelText: "Name",
+          border: OutlineInputBorder()),
+          controller: _nameController,
+        ),
+      ],),),
     );
   }
 }
