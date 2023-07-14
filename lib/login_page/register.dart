@@ -6,6 +6,8 @@ import 'login.dart';
 import 'model.dart';
 
 class Register extends StatefulWidget {
+  const Register({super.key});
+
   @override
   _RegisterState createState() => _RegisterState();
 }
@@ -31,6 +33,7 @@ class _RegisterState extends State<Register> {
     'Student',
     'Teacher',
     'monitor',
+    'Administrador'
   ];
   var _currentItemSelected = "Student";
   var rool = "Student";
@@ -260,13 +263,13 @@ class _RegisterState extends State<Register> {
                             signUp(emailController.text,
                                 passwordController.text, rool);
                           },
-                          child: Text(
+                          color: Colors.blueGrey,
+                          child: const Text(
                             "Registrar",
                             style: TextStyle(
                               fontSize: 20,
                             ),
                           ),
-                          color: Colors.blueGrey,
                         ),
                         SizedBox(
                           height: 150,
@@ -287,7 +290,7 @@ class _RegisterState extends State<Register> {
   }
 
   void signUp(String email, String password, String rool) async {
-    CircularProgressIndicator();
+    const CircularProgressIndicator();
     if (_formkey.currentState!.validate()) {
       await _auth
           .createUserWithEmailAndPassword(email: email, password: password)

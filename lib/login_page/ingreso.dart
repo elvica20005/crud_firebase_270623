@@ -32,7 +32,7 @@ class _ingresoState extends State<ingreso> {
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             SizedBox(
@@ -41,7 +41,7 @@ class _ingresoState extends State<ingreso> {
                 "assets/Syse logo.jpeg",
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 150,
             ),
             Container(
@@ -66,13 +66,13 @@ class _ingresoState extends State<ingreso> {
                             ),
                           );
                         },
-                        child: Text(
+                        color: Colors.blueGrey,
+                        child: const Text(
                           "Ingresar",
                           style: TextStyle(
                             fontSize: 20,
                           ),
                         ),
-                        color: Colors.blueGrey,
                       ),
                       MaterialButton(
                         shape: const RoundedRectangleBorder(
@@ -88,13 +88,13 @@ class _ingresoState extends State<ingreso> {
                           signUp(emailController.text,
                               passwordController.text, rool);
                         },
-                        child: Text(
+                        color: Colors.blueGrey,
+                        child: const Text(
                           "Registrar",
                           style: TextStyle(
                             fontSize: 20,
                           ),
                         ),
-                        color: Colors.blueGrey,
                       ),
                     ],
                   ),

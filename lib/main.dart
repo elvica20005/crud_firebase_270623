@@ -3,6 +3,7 @@ import 'package:crud_firebase_270623/pages/home_google_sign_in.dart';
 import 'package:crud_firebase_270623/pages/principal.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'Calendario/calendario.dart';
 import 'firebase_options.dart';
 
 // Pages
@@ -41,6 +42,7 @@ class MyApp extends StatelessWidget {
         '/edit': (context) => const EditNamePage(),
         '/register': (context) =>  Register(),
         '/ingreso': (context) => const ingreso(),
+        '/calendario': (context) => const Calendario(),
       },
     );
   }

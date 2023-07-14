@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'Administrador.dart';
 import 'model.dart';
 import 'student.dart';
 import 'teacher.dart';
@@ -62,10 +63,14 @@ class _controState extends State<contro> {
       return Teacher(
         id: id,
       );
-    } else {
+    } else if(rooll == 'Monitor'){
     return monitor(
     id: id,
     );
+    } else if(rooll == 'Administrador'){
+      return Administrador(
+        id: id,
+      );
     }
   }
 

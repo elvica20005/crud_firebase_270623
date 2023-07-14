@@ -57,20 +57,20 @@ class _principalState extends State<principal> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 color: Colors.green,
-                  child: Column(
-                    children: <Widget>[
-                      const Expanded(
-                        child: Image(
-                          image: AssetImage("assets/tutor.png"),
-                        ),
+                child: Column(
+                  children: <Widget>[
+                    const Expanded(
+                      child: Image(
+                        image: AssetImage("assets/tutor.png"),
                       ),
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        child: const Text('Tutor'),
-                      ),
-                    ],
-                  ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      child: const Text('Tutor'),
+                    ),
+                  ],
                 ),
+              ),
               Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
@@ -159,9 +159,14 @@ class _principalState extends State<principal> {
                 color: Colors.green,
                 child: Column(
                   children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/administrador.png"),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/ingreso');
+                        },
+                        child: const Image(
+                          image: AssetImage("assets/administrador.png"),
+                        ),
                       ),
                     ),
                     Container(
