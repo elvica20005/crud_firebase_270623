@@ -8,30 +8,25 @@ import 'student.dart';
 import 'teacher.dart';
 import 'monitor.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class PageControl extends StatelessWidget {
+  const PageControl({Key? key}) : super(key: key);
 
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  _HomePageState();
   @override
   Widget build(BuildContext context) {
-    return const Contro();
+    return const Control();
   }
 }
 
-class Contro extends StatefulWidget {
-  const Contro({super.key});
+
+class Control extends StatefulWidget {
+  const Control({Key? key}) : super(key: key);
 
   @override
-  _ControState createState() => _ControState();
+  _ControlState createState() => _ControlState();
 }
 
-class _ControState extends State<Contro> {
-  _ControState();
+class _ControlState extends State<Control> {
+  _ControlState();
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
   var rooll="";
@@ -66,19 +61,21 @@ class _ControState extends State<Contro> {
         id: id,
       );
     } else if(rooll == 'Monitor'){
-    return monitor(
-    id: id,
-    );
+      return monitor(
+        id: id,
+      );
     } else if(rooll == 'Administrador'){
       return Administrador(
         id: id,
       );
     }
   }
-
   @override
   Widget build(BuildContext context) {
     const CircularProgressIndicator();
+    Future.delayed(const Duration(milliseconds: 100));
     return routing();
   }
 }
+
+

@@ -294,8 +294,8 @@ class _RegisterState extends State<Register> {
     if (_formkey.currentState!.validate()) {
       await _auth
           .createUserWithEmailAndPassword(email: email, password: password)
-          .then((value) => {postDetailsToFirestore(email, rool)});
-          //.catchError((e) {});
+          .then((value) => {postDetailsToFirestore(email, rool)})
+          .catchError((e) {});
     }
   }
 
