@@ -74,7 +74,7 @@ class _StudentState extends State<Student> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/calendario.jpg"),
+                        image: AssetImage("assets/calendario.png"),
                       ),
                     ),
                     Container(
@@ -110,7 +110,7 @@ class _StudentState extends State<Student> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/notificaciones.jpg"),
+                        image: AssetImage("assets/notificaciones.png"),
                       ),
                     ),
                     Container(
@@ -128,7 +128,7 @@ class _StudentState extends State<Student> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/cita.jpg"),
+                        image: AssetImage("assets/cita.png"),
                       ),
                     ),
                     Container(

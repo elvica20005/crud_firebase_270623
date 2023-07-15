@@ -75,7 +75,7 @@ class _TeacherState extends State<Teacher> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/calendario.jpg"),
+                        image: AssetImage("assets/calendario.png"),
                       ),
                     ),
                     Container(
@@ -94,7 +94,7 @@ class _TeacherState extends State<Teacher> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/paselista.jpg"),
+                        image: AssetImage("assets/paselista.png"),
                       ),
                     ),
                     Container(
@@ -113,7 +113,7 @@ class _TeacherState extends State<Teacher> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/notificaciones.jpg"),
+                        image: AssetImage("assets/notificaciones.png"),
                       ),
                     ),
                     Container(

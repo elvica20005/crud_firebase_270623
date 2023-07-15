@@ -79,8 +79,8 @@ class _AdministradorState extends State<Administrador> {
                         onTap: () {
                           Navigator.pushNamed(context, '/calendario');
                         },
-                        child: Image(
-                          image: AssetImage("assets/calendario.jpg"),
+                        child: const Image(
+                          image: AssetImage("assets/calendario.png"),
                         ),
                       ),
                     ),
@@ -99,7 +99,7 @@ class _AdministradorState extends State<Administrador> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/paselista.jpg"),
+                        image: AssetImage("assets/paselista.png"),
                       ),
                     ),
                     Container(
@@ -136,7 +136,7 @@ class _AdministradorState extends State<Administrador> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/reportes.jpeg"),
+                        image: AssetImage("assets/reportes.png"),
                       ),
                     ),
                     Container(
@@ -155,7 +155,7 @@ class _AdministradorState extends State<Administrador> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/notificaciones.jpg"),
+                        image: AssetImage("assets/notificaciones.png"),
                       ),
                     ),
                     Container(
@@ -216,7 +216,7 @@ class _AdministradorState extends State<Administrador> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/cita.jpg"),
+                        image: AssetImage("assets/cita.png"),
                       ),
                     ),
                     Container(
@@ -253,7 +253,7 @@ class _AdministradorState extends State<Administrador> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/reportes.jpeg"),
+                        image: AssetImage("assets/reportes.png"),
                       ),
                     ),
                     Container(

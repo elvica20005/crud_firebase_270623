@@ -19,6 +19,7 @@ class _AddNamePageState extends State<AddNamePage> {
   TextEditingController nameController = TextEditingController(text: "");
   TextEditingController autor = TextEditingController(text: "");
   TextEditingController editorial = TextEditingController(text: "");
+  TextEditingController imagen = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +74,7 @@ class _AddNamePageState extends State<AddNamePage> {
               ElevatedButton(
                   onPressed: () async {
                     await addPeople(
-                            nameController.text, autor.text, editorial.text)
+                            nameController.text, autor.text, editorial.text, imagen.text)
                         .then((_) {
                       Navigator.pop(context);
                       Future.delayed(Duration(milliseconds: 100));

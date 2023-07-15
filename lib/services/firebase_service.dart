@@ -12,6 +12,7 @@ Future<List> getPeople() async {
       "name": data["name"],
       "autor": data["autor"],
       "editorial": data["editorial"],
+      "imagen": data["imagen"],
     };
 
     people.add(person);
@@ -20,10 +21,10 @@ Future<List> getPeople() async {
 }
 
 // Guardar un name en base de datos
-Future<void> addPeople(String name, String autor, String editorial) async {
+Future<void> addPeople(String name, String autor, String editorial, String imagen) async {
   await db
       .collection("people")
-      .add({"name": name, "autor": autor, "editorial": editorial});
+      .add({"name": name, "autor": autor, "editorial": editorial, "imagen": imagen});
 }
 
 // Actualizar un name en base de datos

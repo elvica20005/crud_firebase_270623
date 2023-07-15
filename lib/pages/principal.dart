@@ -83,7 +83,7 @@ class _principalState extends State<principal> {
                           Navigator.pushNamed(context, '/ingreso');
                         },
                         child: const Image(
-                          image: AssetImage("assets/docente.jpg"),
+                          image: AssetImage("assets/docente.png"),
                         ),
                       ),
                     ),
@@ -125,7 +125,7 @@ class _principalState extends State<principal> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/encargado de orden.jpg"),
+                        image: AssetImage("assets/encargado de orden.png"),
                       ),
                     ),
                     Container(

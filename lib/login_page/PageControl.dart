@@ -60,7 +60,7 @@ class _ControlState extends State<Control> {
       return Teacher(
         id: id,
       );
-    } else if(rooll == 'Monitor'){
+    } else if(rooll == 'monitor'){
       return monitor(
         id: id,
       );

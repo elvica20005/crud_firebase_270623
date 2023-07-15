@@ -58,7 +58,7 @@ class _CalendarioState extends State<Calendario> {
               )),
           Expanded(
               flex: 2,
-              child: true
+              child: false
                   ? _PageEmpty()
                   : ListView.builder(
                   itemCount: 50,

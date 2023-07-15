@@ -78,7 +78,7 @@ class _monitorState extends State<monitor> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/calendario.jpg"),
+                        image: AssetImage("assets/calendario.png"),
                       ),
                     ),
                     Container(
@@ -96,7 +96,7 @@ class _monitorState extends State<monitor> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/reportes.jpeg"),
+                        image: AssetImage("assets/reportes.png"),
                       ),
                     ),
                     Container(
@@ -132,7 +132,7 @@ class _monitorState extends State<monitor> {
                   children: <Widget>[
                     const Expanded(
                       child: Image(
-                        image: AssetImage("assets/notificaciones.jpg"),
+                        image: AssetImage("assets/notificaciones.png"),
                       ),
                     ),
                     Container(
