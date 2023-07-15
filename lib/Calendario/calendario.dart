@@ -58,7 +58,7 @@ class _CalendarioState extends State<Calendario> {
               )),
           Expanded(
               flex: 2,
-              child: false
+              child: true
                   ? _PageEmpty()
                   : ListView.builder(
                   itemCount: 50,
@@ -131,20 +131,48 @@ class _SaveDialogo extends StatelessWidget {
 
   final _key = GlobalKey<FormState>();
   final _nameController = TextEditingController();
+  final _textController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
       content: Form(
         key: _key,
-        child: Column(children: [
-        TextFormField(
-          decoration: const InputDecoration(
-            labelText: "Name",
-          border: OutlineInputBorder()),
-          controller: _nameController,
-        ),
-      ],),),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage("assets/Syse logo.jpeg"),
+              ),
+          TextFormField(
+            decoration: const InputDecoration(
+              labelText: "Name",
+            border: OutlineInputBorder()),
+            controller: _nameController,
+          ),
+            const SizedBox(
+              height: 10,
+            ),
+            TextFormField(
+              maxLines: 3,
+              minLines: 3,
+              decoration: const InputDecoration(
+                  labelText: "Text",
+                  border: OutlineInputBorder()),
+              controller: _textController,
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            TextButton(
+                onPressed: (){},
+                style: TextButton.styleFrom(primary: Colors.white,
+                backgroundColor: Colors.purple,
+                elevation: 4),
+                child: const Text('Guardar'))
+      ],),
+        ),),
     );
   }
 }

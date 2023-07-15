@@ -47,7 +47,7 @@ class _AdministradorState extends State<Administrador> {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Administrador",
+          "Administrador" ,
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,

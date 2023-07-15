@@ -13,7 +13,7 @@ class PageControl extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Control();
+    return Control();
   }
 }
 
@@ -29,9 +29,9 @@ class _ControlState extends State<Control> {
   _ControlState();
   User? user = FirebaseAuth.instance.currentUser;
   UserModel loggedInUser = UserModel();
-  var rooll="";
-  var emaill="";
-  var id="";
+  var rooll;
+  var emaill;
+  var id;
   @override
   void initState() {
     super.initState();
@@ -74,7 +74,9 @@ class _ControlState extends State<Control> {
   Widget build(BuildContext context) {
     const CircularProgressIndicator();
     Future.delayed(const Duration(milliseconds: 100));
-    return routing();
+    return Container(
+      child: routing(),
+    );
   }
 }
 
