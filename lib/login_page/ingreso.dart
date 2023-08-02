@@ -17,15 +17,15 @@ class _ingresoState extends State<ingreso> {
   bool showProgress = false;
   final _formkey = GlobalKey<FormState>();
   final _auth = FirebaseAuth.instance;
-  final TextEditingController passwordController = new TextEditingController();
-  final TextEditingController emailController = new TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   var rool = "Student";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.greenAccent.shade400,
       appBar: AppBar(
-        title: Text('Bienvenido Sistema Syce'),
+        title: const Text('Bienvenido Sistema Syce'),
         centerTitle: true,
         //automaticallyImplyLeading: false,
       ),
@@ -109,7 +109,7 @@ class _ingresoState extends State<ingreso> {
   }
 
   void signUp(String email, String password, String rool) async {
-    CircularProgressIndicator();
+    const CircularProgressIndicator();
     if (_formkey.currentState!.validate()) {
       await _auth
           .createUserWithEmailAndPassword(email: email, password: password)

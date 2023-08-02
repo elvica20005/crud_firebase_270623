@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crud_firebase_270623/attendance/main_lista.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -41,13 +42,13 @@ class _AdministradorState extends State<Administrador> {
 
   @override
   final Stream<QuerySnapshot> _usersStream =
-      FirebaseFirestore.instance.collection('posts').snapshots();
+  FirebaseFirestore.instance.collection('posts').snapshots();
 
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Administrador" ,
+          "Administrador",
         ),
         centerTitle: true,
         automaticallyImplyLeading: false,
@@ -97,9 +98,16 @@ class _AdministradorState extends State<Administrador> {
                 color: Colors.green,
                 child: Column(
                   children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/paselista.png"),
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder:
+                                  (context) => mainlista()));
+                        },
+                        child: Image(
+                          image: AssetImage("assets/paselista.png"),
+                        ),
                       ),
                     ),
                     Container(
@@ -142,7 +150,7 @@ class _AdministradorState extends State<Administrador> {
                     Container(
                       padding: const EdgeInsets.all(10),
                       child:
-                          const Text('Reportes', textAlign: TextAlign.center),
+                      const Text('Reportes', textAlign: TextAlign.center),
                     ),
                   ],
                 ),
@@ -240,7 +248,7 @@ class _AdministradorState extends State<Administrador> {
                     Container(
                       padding: const EdgeInsets.all(10),
                       child:
-                          const Text('Consultas', textAlign: TextAlign.center),
+                      const Text('Consultas', textAlign: TextAlign.center),
                     ),
                   ],
                 ),

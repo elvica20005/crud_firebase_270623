@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
         '/edit': (context) => const EditNamePage(),
         '/register': (context) =>  Register(),
         '/ingreso': (context) => const ingreso(),
-        '/calendario': (context) => Calendario(createTodoDialog: null,),
+        '/calendario': (context) => Calendario(),
       },
     );
   }
