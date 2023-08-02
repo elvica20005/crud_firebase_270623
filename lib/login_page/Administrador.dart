@@ -3,6 +3,7 @@ import 'package:crud_firebase_270623/attendance/main_lista.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import '../controlacceso/today_screen.dart';
 import 'model.dart';
 
 class Administrador extends StatefulWidget {
@@ -124,9 +125,16 @@ class _AdministradorState extends State<Administrador> {
                 color: Colors.green,
                 child: Column(
                   children: <Widget>[
-                    const Expanded(
-                      child: Image(
-                        image: AssetImage("assets/control acceso.png"),
+                     Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder:
+                                  (context) => const TodayScreen()));
+                        },
+                        child: const Image(
+                          image: AssetImage("assets/control acceso.png"),
+                        ),
                       ),
                     ),
                     Container(
