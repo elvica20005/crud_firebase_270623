@@ -67,7 +67,7 @@ class _mainpageState extends State<mainpage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               const Text(
-                'Attendance Page',
+                'Pagina de pase de lista',
                 style: TextStyle(
                   fontSize: 15,
                 ),

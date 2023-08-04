@@ -60,7 +60,7 @@ class _mainlistaState extends State<mainlista> {
     var w = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Attendance app'),
+        title: const Text('Pase de lista'),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -1,8 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crud_firebase_270623/attendance/main_lista.dart';
+import 'package:crud_firebase_270623/pages/upload_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:crud_firebase_270623/Acceso/loginscreen.dart';
 
+import '../Calendario/calendar.dart';
 import '../controlacceso/today_screen.dart';
 import 'model.dart';
 
@@ -79,7 +82,9 @@ class _AdministradorState extends State<Administrador> {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          Navigator.pushNamed(context, '/calendario');
+                          Navigator.push(context,
+                              MaterialPageRoute(builder:
+                              (context) => UploadPage()));
                         },
                         child: const Image(
                           image: AssetImage("assets/calendario.png"),
@@ -106,7 +111,7 @@ class _AdministradorState extends State<Administrador> {
                               MaterialPageRoute(builder:
                                   (context) => mainlista()));
                         },
-                        child: Image(
+                        child: const Image(
                           image: AssetImage("assets/paselista.png"),
                         ),
                       ),
@@ -130,7 +135,7 @@ class _AdministradorState extends State<Administrador> {
                         onTap: () {
                           Navigator.push(context,
                               MaterialPageRoute(builder:
-                                  (context) => const TodayScreen()));
+                                  (context) => const LoginScreen()));
                         },
                         child: const Image(
                           image: AssetImage("assets/control acceso.png"),
