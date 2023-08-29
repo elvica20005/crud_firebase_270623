@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Nueva extends StatefulWidget {
   const Nueva({Key? key}) : super(key: key);
@@ -9,9 +11,21 @@ class Nueva extends StatefulWidget {
 }
 
 class _NuevaState extends State<Nueva> {
+  String dropdownValue = 'Uniforme de Gala';
   TextEditingController evento = TextEditingController();
   TextEditingController dateController = TextEditingController();
   TextEditingController selTime = TextEditingController();
+
+  final _auth = FirebaseAuth.instance;
+  CollectionReference ref = FirebaseFirestore.instance.collection('evento');
+
+  var options = [
+    'Uniforme de Gala',
+    'Uniforme Deportivo',
+    'Vestimenta de calle',
+  ];
+  var _currentItemSelected = "Uniforme de Gala";
+  var vestimenta = "Uniforme de Gala";
 
   @override
   void initState() {
@@ -35,6 +49,9 @@ class _NuevaState extends State<Nueva> {
               decoration: const InputDecoration(
                 hintText: 'Nuevo evento',
               ),
+            ),
+            const SizedBox(
+              width: 50,
             ),
             TextField(
               controller: dateController,
@@ -74,10 +91,6 @@ class _NuevaState extends State<Nueva> {
                     print(pickedTime.toString());
                     var hora = '${pickedTime.hour.toString().padLeft(1,'0')} : ${pickedTime.minute.toString().padLeft(2,'0')}';
                     print('La hora es: ' +hora);
-                    //DateTime parsedTime = DateFormat.jm().parse(pickedTime.format.toString());
-                    //print(parsedTime);
-                    //String formattedTime = DateFormat('HH:mm:ss').format(parsedTime);
-                    //print(formattedTime);
                     setState(() {
                      selTime.text = hora;
                     });
@@ -85,6 +98,57 @@ class _NuevaState extends State<Nueva> {
                     print('No se seleccionó hora');
                   }
               },
+            ),
+
+            DropdownButton<String>(
+              dropdownColor: Colors.blueGrey,
+              isDense: true,
+              isExpanded: false,
+              iconEnabledColor: Colors.white,
+              focusColor: Colors.white,
+              items: options.map((String dropDownStringItem) {
+                return DropdownMenuItem<String>(
+                  value: dropDownStringItem,
+                  child: Text(
+                    dropDownStringItem,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                );
+              }).toList(),
+              onChanged: (newValueSelected) {
+                setState(() {
+                  _currentItemSelected = newValueSelected!;
+                  vestimenta = newValueSelected;
+                });
+              },
+              value: _currentItemSelected,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            MaterialButton(
+              color: const Color.fromARGB(255, 2, 11, 128),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)),
+              onPressed: () {
+                ref.add({
+                  'Evento': evento.text,
+                  'Fecha': dateController.text,
+                  'Hora': selTime.text,
+                  'Vestimenta': vestimenta,
+                });
+                Navigator.pop(context);
+              },
+              child: const Text(
+                'Añadir',
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             ),
           ],
         ),

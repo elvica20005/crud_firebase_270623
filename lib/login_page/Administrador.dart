@@ -168,7 +168,7 @@ class _AdministradorState extends State<Administrador> {
                   ],
                 ),
               ),
-              Card(
+              /*Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 color: Colors.green,
@@ -185,7 +185,7 @@ class _AdministradorState extends State<Administrador> {
                     ),
                   ],
                 ),
-              ),
+              ),*/
               Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
@@ -205,7 +205,7 @@ class _AdministradorState extends State<Administrador> {
                   ],
                 ),
               ),
-              Card(
+              /*Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),
                 color: Colors.green,
@@ -228,7 +228,7 @@ class _AdministradorState extends State<Administrador> {
                     ),
                   ],
                 ),
-              ),
+              ),*/
               Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30)),

@@ -12,25 +12,7 @@ class UploadPage extends StatefulWidget {
 }
 
 class _UploadPageState extends State<UploadPage> {
-  //var selDate;
-  //var selTime;
   File? imageFile;
-
-  //Fecha
-  /*void callDatePicker() async {
-    var selectDate = await getDatePickerWidget();
-    setState(() {
-      selDate = selectDate;
-    });
-  }
-
-  Future<DateTime?> getDatePickerWidget() {
-    return showDatePicker(
-        context: context,
-        initialDate: DateTime.now(),
-        firstDate: DateTime(2023),
-        lastDate: DateTime(2030));
-  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +26,6 @@ class _UploadPageState extends State<UploadPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                /* SizedBox(
-              width: double.infinity,
-              child: imageFile != null
-                  ? Image.file(imageFile!)
-                  : const Center(child: Text("No hay imagen")),
-            ),
-            const SizedBox(height: 50),*/
                 imageFile != null ? Image.file(imageFile!) : Container(
                   margin: const EdgeInsets.all(10),
                   height: 200,
@@ -98,7 +73,7 @@ class _UploadPageState extends State<UploadPage> {
                           MaterialPageRoute(builder:
                           (context) => const Nueva()));
                     },
-                    child: Text('Nueva Actividad')),
+                    child: const Text('Nueva Actividad')),
               ],
             ),
           ),
