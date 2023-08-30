@@ -28,7 +28,7 @@ class _principal_admonState extends State<principal_admon> {
         centerTitle: true,
         actions: <Widget>[
           IconButton(
-            icon: new Icon(Icons.logout),
+            icon: const Icon(Icons.logout),
             onPressed: () async {
               await _auth.signOutGoogle().whenComplete(() {
                 Navigator.pushNamed(context, '/principal');
@@ -99,7 +99,7 @@ class _principal_admonState extends State<principal_admon> {
                     ),
                     Container(
                       padding: EdgeInsets.all(10),
-                      child: Text('Control de Acceso',
+                      child: const Text('Control de Acceso',
                         textAlign: TextAlign.center),
                     ),
                   ],

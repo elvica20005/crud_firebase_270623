@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:crud_firebase_270623/Calendario/calendarAlumno.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -72,10 +73,17 @@ class _StudentState extends State<Student> {
                 color: Colors.green,
                 child: Column(
                   children: <Widget>[
-                    const Expanded(
-                      child: Image(
+                    Expanded(
+                child: InkWell(
+                    onTap: () {
+              Navigator.push(context,
+              MaterialPageRoute(builder:
+              (context) => CalendarAl()));
+              },
+                      child: const Image(
                         image: AssetImage("assets/calendario.png"),
                       ),
+                    ),
                     ),
                     Container(
                       padding: const EdgeInsets.all(10),
@@ -96,7 +104,7 @@ class _StudentState extends State<Student> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: const Text('Control de Acceso'),
                     ),
                   ],
@@ -114,8 +122,8 @@ class _StudentState extends State<Student> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text('Notificaciones'),
+                      padding: const EdgeInsets.all(10),
+                      child: const Text('Notificaciones'),
                     ),
                   ],
                 ),
@@ -132,8 +140,8 @@ class _StudentState extends State<Student> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
-                      child: Text('Cita'),
+                      padding: const EdgeInsets.all(10),
+                      child: const Text('Cita'),
                     ),
                   ],
                 ),
@@ -150,7 +158,7 @@ class _StudentState extends State<Student> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: const Text('Configuración'),
                     ),
                   ],
@@ -168,7 +176,7 @@ class _StudentState extends State<Student> {
                       ),
                     ),
                     Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: const Text('Actividades'),
                     ),
                   ],
@@ -182,7 +190,7 @@ class _StudentState extends State<Student> {
   }
 
   Future<void> logout(BuildContext context) async {
-    CircularProgressIndicator();
+    const CircularProgressIndicator();
     await FirebaseAuth.instance.signOut();
 
     Navigator.pushNamed(context, '/principal');
