@@ -14,10 +14,12 @@ import 'package:crud_firebase_270623/pages/home_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'login_page/ingreso.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
+    await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
@@ -46,4 +48,5 @@ class MyApp extends StatelessWidget {
       },
     );
   }
+  
 }
